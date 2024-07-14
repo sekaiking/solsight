@@ -1,0 +1,28 @@
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.skeleton {
+  background: rgba(var(--bg), 1);
+  background-image: linear-gradient(
+    to right,
+    rgba(var(--bg), 0.1) 0%,
+    rgba(var(--text), 0.1) 20%,
+    rgba(var(--bg), 0.1) 40%,
+    rgba(var(--bg), 0.1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+}

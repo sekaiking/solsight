@@ -1,0 +1,117 @@
+:root {
+  --dark: 0, 20, 30;
+  --light: 240, 250, 255;
+  --white: 255, 255, 255;
+  --muted: 100, 100, 100;
+  --primary: 0, 136, 187;
+
+  --text: var(--white);
+  --bg: var(--dark);
+
+  --border-1: 1px solid rgba(var(--white), 0.1);
+  --border-2: 1px solid rgba(var(--white), 0.2);
+
+  /* shadow looks the same as border, used to avoid problems with gradient backgrounds */
+  --shadow-1: inset 0 0 0 1px rgba(var(--white), 0.1);
+  --shadow-2: inset 0 0 0 1px rgba(var(--white), 0.2);
+}
+
+[data-theme="light"] {
+  --text: var(--dark);
+  --bg: var(--light);
+  --border-1: 1px solid rgba(var(--dark), 0.1);
+  --border-2: 1px solid rgba(var(--dark), 0.2);
+  --shadow-1: inset 0 0 0 1px rgba(var(--dark), 0.1);
+  --shadow-2: inset 0 0 0 1px rgba(var(--dark), 0.2);
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 14px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  color: rgb(var(--text));
+  background-color: rgb(var(--bg));
+  background-size: 100% 600px;
+}
+
+.container {
+  margin: 0 auto;
+}
+.container {
+  max-width: 1248px;
+}
+@media (max-width: 1248px) {
+  .container {
+    max-width: 900px;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    max-width: 358px;
+  }
+}
+@media (max-width: 390px) {
+  .container {
+    max-width: 100%;
+    padding: 0 4px;
+  }
+}
+
+.btn {
+  border: 0;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 16px;
+
+  background-color: var(--primary);
+  background: linear-gradient(
+    -40deg,
+    rgba(var(--primary), 0.8) 0%,
+    rgba(var(--primary), 0.4) 100%
+  );
+  border-radius: 12px;
+  color: rgb(var(--white));
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: linear-gradient(
+    -40deg,
+    rgba(var(--primary), 0.6) 0%,
+    rgba(var(--primary), 0.2) 100%
+  );
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+a {
+  color: rgb(var(--primary));
+}

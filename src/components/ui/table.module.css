@@ -1,0 +1,37 @@
+.tableContainer {
+  overflow-x: auto;
+  border: var(--border-1);
+  border-radius: 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border-bottom: var(--border-2);
+}
+
+.table tr:last-of-type td {
+  border-bottom: 0;
+}
+
+.table th {
+  font-weight: 600;
+  background: radial-gradient(
+    100% 110% at 50% 100%,
+    rgba(var(--primary), 0.1) 0%,
+    rgba(var(--bg), 0.1) 100%
+  );
+}
+
+@media (max-width: 640px) {
+  .table th,
+  .table td {
+    padding: 8px;
+  }
+}

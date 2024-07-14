@@ -1,0 +1,31 @@
+.labelContainer {
+  border: var(--border-1);
+  background-color: rgba(var(--bg), 0.6);
+  background: radial-gradient(
+    107.5% 107.5% at 50% 215%,
+    rgba(var(--bg), 1) 0%,
+    rgba(var(--bg), 0.4) 100%
+  );
+
+  border-radius: 8px;
+  padding: 0 8px;
+  line-height: 1.8;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+}
+
+.copyButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(var(--text), 0.4);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}

@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SolSight
 
-## Getting Started
+## Overview
 
-First, run the development server:
+SolSight is an explorer/dashboard for the Solana blockchain, providing users with an intuitive interface to explore and analyze key network data. This project is an experiment front-end built under 48 hours, focused on good practices and great UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Data Dashboard**: View information such as current epoch, slot, and transaction count...
+- **View Account Data**: Display some basic information about an account.
+- **View Account Transactions**: Display a list of recent transactions with key details.
+- **View Account Assets**: Display a list of user assets such as NFTs and tokens.
+- **View Transaction Data**: Display data about a transaction.
+- **Light/Dark Mode**: A nice and simple good to have feature.
+- **Internationalization**: The code is made ready to support multiple languages, but currently it only supports English.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technical Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The website is more than a simple front-end, because it uses Next.js new features of server components, all components that require data from the RPC or APIs are server-side components.
 
-## Learn More
+Why?
 
-To learn more about Next.js, take a look at the following resources:
+Because it's expensive to query the RPC/APIs on every page load, and in the case of Helius it uses a lot of credits. By fetching the data in the server we can cache it between users and requests.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure Explained
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The `src` folder contains the following folders:
 
-## Deploy on Vercel
+- app: Nextjs routes & pages
+- components
+  - server: components rendered in the server that fetches data and caches it.
+  - client: components rendered in the client that also are part of the business logic.
+  - ui: components responsible only for displaying data in a nice way.
+  - dev: components that are created during development but not still not used.
+- i18n: Internationalization
+- styles: global/reusable CSS
+- utils: TypeScript functions that are used repeatedly in the app.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Installation and Setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Before you begin, ensure you have met the following requirements:
+
+- Node.js (v14.0.0 or later)
+- npm (v6.0.0 or later)
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/sekaiking/solsight.git
+   cd solsight
+   ```
+
+2. Install dependencies (I prefer pnpm, but use whichever you prefer):
+
+   ```
+   pnpm install
+   ```
+
+3. Rename the `.env.example` file to `.env` and fill in the following values:
+
+   ```
+   SOLANA_RPC_URL=
+   SOLANA_BEACH_API=
+   SOLANA_BEACH_KEY=
+   HELIUS_API=
+   HELIUS_KEY=
+   ```
+
+4. Start the development server:
+
+   ```
+   pnpm dev
+   ```
+
+5. Open `http://localhost:3000` to view the app in your browser.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Contact
+
+If you have any questions or feedback, please reach out to us at:
+
+- Email: <afaithraf@gmail.com>

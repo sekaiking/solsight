@@ -1,0 +1,47 @@
+.tabs {
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.tab {
+  box-shadow: var(--shadow-1);
+  background: radial-gradient(
+    100% 110% at 50% 100%,
+    rgba(var(--primary), 0.1) 0%,
+    rgba(var(--bg), 0.1) 100%
+  );
+  padding: 8px;
+  font-size: 0.9rem;
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.tab:hover:not(.active) {
+  box-shadow: var(--shadow-2);
+  background: radial-gradient(
+    100% 110% at 50% 100%,
+    rgba(var(--primary), 0.2) 0%,
+    rgba(var(--bg), 0.1) 100%
+  );
+}
+
+.tab.active {
+  background: radial-gradient(
+    100% 110% at 50% 100%,
+    rgba(var(--primary), 0.8) 10%,
+    rgba(var(--primary), 0.1) 100%
+  );
+}
+
+.tab:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.tab:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
