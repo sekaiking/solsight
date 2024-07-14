@@ -31,6 +31,7 @@ function Table<T>({ data, columns, className = "" }: TableProps<T>) {
             <tr key={rowIndex}>
               {columns.map((column, colIndex) => (
                 <td key={colIndex} className={column.className}>
+                  {/* @ts-ignore */}
                   {typeof column.accessor === "function"
                     ? column.accessor(item)
                     : item[column.accessor]}

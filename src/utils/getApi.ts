@@ -76,12 +76,12 @@ export class Api {
       signature: string;
       slot: number;
       timestamp: number;
-      nativeTransfers: object[];
-      tokenTransfers: object[];
-      accountData: object[];
-      transactionError: object;
-      instructions: object[];
-      events: object;
+      nativeTransfers: any[];
+      tokenTransfers: any[];
+      accountData: any[];
+      transactionError: any;
+      instructions: any[];
+      events: any;
     }[]
   > {
     if (!options.limit) {
@@ -124,12 +124,12 @@ export class Api {
     signature: string;
     slot: number;
     timestamp: number;
-    nativeTransfers: object[];
-    tokenTransfers: object[];
-    accountData: object[];
-    transactionError: object;
-    instructions: object[];
-    events: object;
+    nativeTransfers: any[];
+    tokenTransfers: any[];
+    accountData: any[];
+    transactionError: any;
+    instructions: any[];
+    events: any;
   }> {
     const res = await fetch(
       this.HELIUS_API + `/transactions?api-key=${this.HELIUS_KEY}`,

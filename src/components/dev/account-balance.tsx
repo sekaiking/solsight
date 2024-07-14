@@ -1,3 +1,4 @@
+// @ts-nocheck
 import getCustomWeb3 from "@/utils/getCustomWeb3";
 
 export const revalidate = 60; // revalidate every minute

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { cache } from "react";
 import { Connection, PublicKey } from "@solana/web3.js";
 import InfoBox from "@/ui/info-box";

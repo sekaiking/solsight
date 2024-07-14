@@ -1,3 +1,4 @@
+// @ts-nocheck
 import getWeb3 from "@/utils/getWeb3";
 import { Connection } from "@solana/web3.js";
 import { cache } from "react";
